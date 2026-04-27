@@ -14,18 +14,8 @@ type GalleryImage = {
 const images: GalleryImage[] = [
   {
     id: 1,
-    src: "/images/8c80b27d-2cef-4ffe-a499-969cb88f5333.jpg",
-    alt: "Foto projektu 1",
-  },
-  {
-    id: 2,
-    src: "/images/88e2cc9a-5e6c-4c4e-8632-3446d18e517b.jpg",
-    alt: "Foto projektu 2",
-  },
-  {
-    id: 3,
     src: "/images/7dc321a0-bccd-4151-8691-e8db2c93b2bd.jpg",
-    alt: "Foto projektu 3",
+    alt: "Foto projektu 1",
   },
 ]
 
