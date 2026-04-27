@@ -5,22 +5,10 @@ import Image from "next/image"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { X } from "lucide-react"
 
-type GalleryImage = {
-  id: number
-  src: string
-  alt: string
-}
-
-const images: GalleryImage[] = [
-  {
-    id: 1,
-    src: "/images/7dc321a0-bccd-4151-8691-e8db2c93b2bd.jpg",
-    alt: "Foto projektu 1",
-  },
-]
+const images = ["/images/7dc321a0-bccd-4151-8691-e8db2c93b2bd.jpg"]
 
 export default function Fotogaleria() {
-  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   return (
     <div className="bg-white">
@@ -40,15 +28,15 @@ export default function Fotogaleria() {
       <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {images.map((image) => (
+            {images.map((src, index) => (
               <div
-                key={image.id}
+                key={index}
                 className="relative aspect-square overflow-hidden rounded-lg bg-gray-200 cursor-pointer hover:opacity-90 transition-opacity"
-                onClick={() => setSelectedImage(image)}
+                onClick={() => setSelectedImage(src)}
               >
                 <Image
-                  src={image.src}
-                  alt={image.alt}
+                  src={src}
+                  alt={`Foto projektu ${index + 1}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -64,8 +52,8 @@ export default function Fotogaleria() {
           {selectedImage && (
             <div className="relative aspect-video bg-gray-200">
               <Image
-                src={selectedImage.src}
-                alt={selectedImage.alt}
+                src={selectedImage}
+                alt="Gallery image"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 1024px"
