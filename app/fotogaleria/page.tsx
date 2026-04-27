@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { X } from "lucide-react"
@@ -11,30 +11,26 @@ type GalleryImage = {
   alt: string
 }
 
+const images: GalleryImage[] = [
+  {
+    id: 1,
+    src: "/images/deceptphoto/8c80b27d-2cef-4ffe-a499-969cb88f5333.jpg",
+    alt: "Foto projektu 1",
+  },
+  {
+    id: 2,
+    src: "/images/deceptphoto/88e2cc9a-5e6c-4c4e-8632-3446d18e517b.jpg",
+    alt: "Foto projektu 2",
+  },
+  {
+    id: 3,
+    src: "/images/deceptphoto/7dc321a0-bccd-4151-8691-e8db2c93b2bd.jpg",
+    alt: "Foto projektu 3",
+  },
+]
+
 export default function Fotogaleria() {
-  const [images, setImages] = useState<GalleryImage[]>([])
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
-
-  useEffect(() => {
-    async function loadGalleryImages() {
-      try {
-        const response = await fetch("/api/gallery-images")
-        if (!response.ok) return
-
-        const data = (await response.json()) as { files: string[] }
-        const galleryImages = data.files.map((src, index) => ({
-          id: index + 1,
-          src,
-          alt: `Foto projektu ${index + 1}`,
-        }))
-        setImages(galleryImages)
-      } catch {
-        setImages([])
-      }
-    }
-
-    loadGalleryImages()
-  }, [])
 
   return (
     <div className="bg-white">
