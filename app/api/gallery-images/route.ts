@@ -6,7 +6,7 @@ const ALLOWED_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp"]
 
 export async function GET() {
   try {
-    const imagesDir = path.join(process.cwd(), "public", "images")
+    const imagesDir = path.join(process.cwd(), "public", "images", "deceptphoto")
     const files = await readdir(imagesDir)
 
     const galleryFiles = files
@@ -16,7 +16,7 @@ export async function GET() {
         return ALLOWED_EXTENSIONS.includes(ext) && !lower.startsWith("logos")
       })
       .sort((a, b) => a.localeCompare(b))
-      .map((file) => `images/${file}`)
+      .map((file) => `/vnd-construction/images/deceptphoto/${file}`)
 
     return NextResponse.json({ files: galleryFiles })
   } catch {
