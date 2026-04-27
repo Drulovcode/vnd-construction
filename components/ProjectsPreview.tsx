@@ -9,19 +9,19 @@ const projects = [
     title: "Rekonštrukcia rodinného domu",
     location: "Bratislava - Dúbravka",
     description: "Kompletná rekonštrukcia rodinného domu s moderným interiérom.",
-    image: "/vnd-construction/images/deceptphoto/project-1.jpg",
+    image: "/images/project-1.jpg",
   },
   {
     title: "Stavba nového domu",
     location: "Bratislava - Rača",
     description: "Stavba rodinného domu na kľúč s dizajnovým exteriérom.",
-    image: "/vnd-construction/images/deceptphoto/project-2.jpg",
+    image: "/images/project-2.jpg",
   },
   {
     title: "Rekonštrukcia bytu",
     location: "Bratislava - Staré Mesto",
     description: "Kompletná rekonštrukcia 3-izbového bytu v historickom centre.",
-    image: "/vnd-construction/images/deceptphoto/project-3.jpg",
+    image: "/images/project-3.jpg",
   },
 ]
 
