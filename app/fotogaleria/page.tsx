@@ -5,7 +5,19 @@ import Image from "next/image"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { X } from "lucide-react"
 
-const images = ["/images/7dc321a0-bccd-4151-8691-e8db2c93b2bd.jpg"]
+const images = [
+  "/images/7dc321a0-bccd-4151-8691-e8db2c93b2bd.jpg",
+  "/images/8c80b27d-2cef-4ffe-a499-969cb88f5333.jpg",
+  "/images/88e2cc9a-5e6c-4c4e-8632-3446d18e517b.jpg",
+  "/images/9126820c-c770-4bc8-a0b0-6ebb7073868c.jpg",
+  "/images/a1b9f777-c2f2-4963-8bdc-1ee88fe86194.jpg",
+  "/images/a4d77600-2ddd-4028-8249-6793213e0f45.jpg",
+  "/images/b84493bd-6375-4ace-86b1-dd8039b3b540.jpg",
+  "/images/db7477e7-8339-4942-8833-4bc5a9cacc69.jpg",
+  "/images/e959d265-1b07-4da8-9fcd-c05b5e63cc54.jpg",
+  "/images/e9ed8770-3951-47fc-bb5d-f83032620b95.jpg",
+  "/images/f5e8daae-2e6d-48ac-aae2-00254a876e39.jpg",
+]
 
 export default function Fotogaleria() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
