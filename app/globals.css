@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Premium Construction Color Palette */
+    --background: 220 14% 96%; /* #f9fafb - теплый бежево-серый фон */
+    --foreground: 210 20% 10%; /* темно-серый текст */
+    --card: 0 0% 100%; /* белый для карточек */
+    --card-foreground: 210 20% 10%; /* темно-серый текст на карточках */
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 10%;
+    --primary: 210 20% 18%; /* #1f2933 - темно-синий/графитовый */
+    --primary-foreground: 0 0% 100%; /* белый текст на primary */
+    --secondary: 210 20% 95%; /* светло-серый для secondary */
+    --secondary-foreground: 210 20% 10%; /* темно-серый текст */
+    --muted: 210 20% 96%; /* очень светло-серый */
+    --muted-foreground: 210 10% 40%; /* серый текст */
+    --accent: 38 96% 50%; /* #f59e0b - строительный желтый/оранжевый */
+    --accent-foreground: 0 0% 100%; /* белый текст на accent */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 210 20% 90%; /* светло-серая граница */
+    --input: 210 20% 90%;
+    --ring: 38 96% 50%; /* accent цвет для focus ring */
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
